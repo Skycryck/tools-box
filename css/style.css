@@ -46,16 +46,16 @@ h1, h2, h3, h4 {
 }
 
 h1 {
-    font-size: 2em;
+    font-size: 2rem;
     margin-bottom: 0;
 }
 
 h2 {
-    font-size: 1.5em;
+    font-size: 1.5rem;
 }
 
 h3 {
-    font-size: 1.25em;
+    font-size: 1.25rem;
 }
 
 a {
@@ -333,26 +333,25 @@ th h3 {
 
 /*---CONTACT-------------------------------------------------------*/
 
-#contact input, #contact textarea {
-    width: 90%;
-    font-family: 'Roboto', sans-serif;
-    font-size: 14px;
-}
-
-#contact, #contact fieldset, #contact p {
+#contact {
+    margin: 25px;
+    width: 35%;
+    height: 150px;
+    text-align: justify;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    
 }
 
-#contact fieldset {
-    width: 100%;
+#contact img {
+    height: 20%;
+    width: auto;
 }
 
-#contact #boutton {
+#boutton {
     margin-top: 20px;
-    width: 100%;
+    width: 250px;
     height: 30px;
     transition-duration: 1s; 
     -moz-transition-duration: 1s;
@@ -363,10 +362,11 @@ th h3 {
     font-size: 16px;
     margin: 10px 0 0 0;
     text-transform: uppercase;
+    text-align: center;
     color: white;
 }
 
-#contact #boutton:hover {
+#boutton:hover {
     color: #a53600;
     background-color: white;
 }
@@ -543,7 +543,7 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
-/* Responsive */
+/*---RESPONSIVE----------------------------------------------------*/
 
 /* Resolution 16/9 paysage */
 @media screen and (max-width: 1920px)
