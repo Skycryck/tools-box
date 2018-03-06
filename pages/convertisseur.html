@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html  id="haut">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="../css/style.css" />
+        <link rel="shortcut icon" href="../images/logo.png" />
+        <title>Convertisseur</title>
+    </head>
+    <body>
+        <header>
+            <a id="logo" href="../index.html"></a>
+            <form action="/search" id="searchthis" method="get">
+                <input id="search" name="q" type="text" placeholder="RECHERCHER UN OUTILS" />
+                <input id="search-btn" type="submit" value="Rechercher" />
+            </form>
+
+            <div class="menu">
+                <div class="menu-nv1">
+                    <a href="./calculette.html">Calculette</a>
+                    <a href="#">Convertisseur</a>
+                    <a href="./ascii.html">Table ASII</a>
+                    <a href="./js.html">Carte bornes</a>
+                    <a href="./contact.html">Contact</a>
+                </div>
+            </div>
+        </header>
+        <main>
+            <section>
+                <article>
+                    <h1>CONVERTISSEUR DÉCIMAL, HEXADÉCIMAL, BINAIRE</h1>
+                    <hr width="100%" color="white">
+                    <form action="">
+                        <fieldset id="conversion">
+                            <p>
+                                <label for="decimal">Décimal</label>
+                                <input type="text" id="decimal" name="decimal">
+                                <input class="valider" type="button" value="↔️">
+                            </p>
+                            <p>
+                                <label for="hexadecimal">Hexadécimal</label>
+                                <input type="text" id="hexadecimal" name="hexadecimal">
+                                <input class="valider" type="button" value="↔️">
+                            </p>
+                            <p>
+                                <label for="binary">Binaire</label>
+                                <input type="text" id="binary" name="binary">
+                                <input class="valider" type="button" value="↔️">
+                            </p>
+                        </fieldset>
+                    </form>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p></p>
+            <p>© programing-toolbox.com</p>
+            <a href="#haut">haut de page</a>
+        </footer>
+        <script src="../js/convertisseur.js"></script>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="../js/scroll.js"></script>
+    </body>
+</html>

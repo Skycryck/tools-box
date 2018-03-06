@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html  id="haut">
+    <head>
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="shortcut icon" href="images/logo.png" />
+        <title>ToolsBox</title>
+    </head>
+    <body>
+        <header>
+            <a id="logo" href="#haut"></a>
+            <form action="/search" id="searchthis" method="get">
+                <input id="search" name="q" type="text" placeholder="RECHERCHER UN OUTILS" />
+                <input id="search-btn" type="submit" value="Rechercher" />
+            </form>
+
+            <nav class="menu">
+                <div class="menu-nv1">
+                    <a href="./pages/calculette.html">Calculette</a>
+                    <a href="./pages/convertisseur.html">Convertisseur</a>
+                    <a href="./pages/ascii.html">Table ASII</a>
+                    <a href="./pages/js.html">Carte bornes</a>
+                    <a href="./pages/contact.html">Contact</a>
+                </div>
+            </nav>
+        </header>
+        <main>
+            <section>
+                
+                
+                <article>
+                    <h1>OUTILS</h1>
+                    <hr width="94.5%" color="white">
+                    <div class="divImageZoom">
+                        <a href="./pages/calculette.html"><img src="images/computer.png"></a>
+                    </div>
+                    <div class="divImageZoom">
+                        <a href="./pages/convertisseur.html"><img src="images/computer.png"></a>
+                    </div>
+                    <!--
+                    <div class="divImageZoom">
+                        <a href="#"><img src="images/computer.png"></a>
+                    </div>
+                    <div class="divImageZoom">
+                        <a href="#"><img src="images/computer.png"></a>
+                    </div>
+                    -->
+                </article>
+                <article id="a-propos">
+                    <h1>A PROPOS</h1>
+                    <hr width="100%" color="white">
+                    <p>Ce site internet est un site qui regroupe de nombreux outils nécessaires au programmeur. On y retrouve par exemple une calculatrice, un convertisseur de base, la table ASCII ou encore la liste des raccourcies de certains environnements de développement et plein d'autres outils. Ce site a était développer dans le cadre d'un projet HTML de licence informatique. <a href="mailto:vanhulst79@gmail.com">Contact.</a> </p>
+                </article>
+            </section>
+        </main>
+        <footer>
+            <p></p>
+            <p>© programing-toolsbox.com</p>
+            <a href="#haut">haut de page</a>
+        </footer>
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/scroll.js"></script>
+    </body>
+</html>
