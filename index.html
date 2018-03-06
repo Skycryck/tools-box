@@ -26,25 +26,28 @@
         </header>
         <main>
             <section>
-                
-                
                 <article>
                     <h1>OUTILS</h1>
                     <hr width="94.5%" color="white">
-                    <div class="divImageZoom">
-                        <a href="./pages/calculette.html"><img src="images/computer.png"></a>
+                    <div class="ImageZoom">
+                        <a href="./pages/calculette.html" onmouseover="hoverFiltre1()" onmouseout="outFiltre1()" >
+                            <img id="img1" class="image" src="images/calculette.png">
+                            <div id="filtre1" class="filtre filtre-hidden">
+                                <h3>Calculette</h3>
+                                <hr width="70%" color="black">
+                            </div>
+                        </a>
+                        
                     </div>
-                    <div class="divImageZoom">
-                        <a href="./pages/convertisseur.html"><img src="images/computer.png"></a>
+                    <div class="ImageZoom">
+                        <a href="./pages/convertisseur.html" onmouseover="hoverFiltre2()" onmouseout="outFiltre2()" >
+                            <img id="img2" class="image" src="images/convertisseur.png">
+                            <div id="filtre2" class="filtre filtre-hidden">
+                                <h3>Convertisseur</h3>
+                                <hr width="70%" color="black">
+                            </div>
+                        </a>
                     </div>
-                    <!--
-                    <div class="divImageZoom">
-                        <a href="#"><img src="images/computer.png"></a>
-                    </div>
-                    <div class="divImageZoom">
-                        <a href="#"><img src="images/computer.png"></a>
-                    </div>
-                    -->
                 </article>
                 <article id="a-propos">
                     <h1>A PROPOS</h1>
@@ -59,6 +62,7 @@
             <a href="#haut">haut de page</a>
         </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="js/image-index.js"></script>
         <script src="js/scroll.js"></script>
     </body>
 </html>

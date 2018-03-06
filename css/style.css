@@ -77,7 +77,6 @@ a:hover {
 hr {
     margin-top: 25px;
     margin-bottom: 25px;
-    
 }
 
 header {
@@ -197,7 +196,7 @@ footer {
     width: 400px;
 }
 
-.menu-nv1{
+.menu-nv1 {
     padding-top: 20px;
     position: absolute;
     transition-duration: 1s; 
@@ -224,24 +223,61 @@ footer {
     display: flex;
 }
 
-.divImageZoom {
+.ImageZoom {
 	width: 400px;
 	height: 267px;
 	overflow: hidden;
+    position: relative;
 }
 
-.divImageZoom img{
+.image {
     transition-duration: 1s; 
     -moz-transition-duration: 1s;
 	max-width: 100%;
+    position: absolute;
 }
 			
-.divImageZoom img:hover{
+.image-hover {
 	-webkit-transform:scale(1.25);
 	-moz-transform:scale(1.25);
 	-ms-transform:scale(1.25); 
 	-o-transform:scale(1.25); 
 	transform:scale(1.25);
+}
+
+.filtre {
+    position: absolute;
+    background: linear-gradient(rgba(255,255,255,0), white);
+    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    transition-duration: 1s; 
+    -moz-transition-duration: 1s;
+    -webkit-transform: translateY(100%);
+    -ms-transform: translateY(100%);
+    transform: translateY(100%);
+}
+
+
+.filtre h3 {
+    color: black;
+    margin-top: 50px;
+}
+
+.filtre hr {
+    margin-bottom:15px;
+    margin-top: 0;
+}
+
+.filtre-hidden {
+    transition-duration: 1s; 
+    -moz-transition-duration: 1s;
+    -webkit-transform: translateY(200%);
+    -ms-transform: translateY(200%);
+    transform: translateY(200%);
 }
 
 /*---ASCII---------------------------------------------------------*/
@@ -367,9 +403,14 @@ th h3 {
 
 /*---MAP-----------------------------------------------------------*/
 
+#map-legende {
+    width: 1100px;
+    display: flex;
+}
+
 #map {
     height: 500px;
-    width: 100%;
+    width: 75%;
 }
 
 #question {
@@ -379,6 +420,10 @@ th h3 {
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+
+#question > div {
+    display: flex;
 }
 
 #question form {
@@ -391,44 +436,38 @@ th h3 {
     margin-top: 0;
 }
 
-#legend ul li {
+#legende ul li {
     border-style: solid;
     border-width: 2px;
     border-color: white;
     display: inline-block;
-    text-align: center;
     width: 200px;
     padding: 5px;
     margin: 5px;
 }
 
-#legend ul {
+#legende ul {
     padding: 0;
-    text-align: center;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 250px;
 }
 
-#legend {
+#legende {
     text-align: center;
+    width: 25%;
+    height: auto;
 }
 
 .borne-hidden {
-    -webkit-transform: translateY(-100px);
-    -ms-transform: translateY(-100px);
-    transform: translateY(-100px);
-}
-
-.location-borne-hidden {
-    -webkit-transform: translateX(85px);
-    -ms-transform: translateX(85px);
-    transform: translateX(85px);
+    -webkit-transform: translateX(-225px);
+    -ms-transform: translateX(-225px);
+    transform: translateX(-225px);
 }
 
 #borne {
-    transition-duration: 1s;
-}
-
-#location {
     transition-duration: 1s;
 }
 
@@ -455,10 +494,8 @@ th h3 {
     margin-right: 10px;
 }
 
-/* Hide default HTML checkbox */
 .switch input {display:none;}
 
-/* The slider */
 .slider {
     position: absolute;
     cursor: pointer;
@@ -504,4 +541,38 @@ input:checked + .slider:before {
 
 .slider.round:before {
     border-radius: 50%;
+}
+
+/* Responsive */
+
+/* Resolution 16/9 paysage */
+@media screen and (max-width: 1920px)
+{
+    
+}
+
+@media screen and (max-width: 1280px)
+{
+    
+}
+
+@media screen and (max-width: 853px)
+{
+    
+}
+
+/* Resolution 16/9 portrait */
+@media screen and (max-width: 1080px)
+{
+    
+}
+
+@media screen and (max-width: 720px)
+{
+    
+}
+
+@media screen and (max-width: 480px)
+{
+    
 }

@@ -2,7 +2,7 @@ var map;
 var markers = [];
 
 var toggle = document.getElementById("toggle");
-addLegend();
+clearLegend();
 
 //Initialisation de la carte
 function initMap() {
@@ -91,58 +91,13 @@ function round(number) {
   return Math.round(number * factor) / factor;
 }
 
-function addLegend() {
-    var legend = document.getElementById("legend");
-    legend.style.width = "900px";
-    legend.style.height = "175px";
-    
-    var ul = document.createElement("ul");
-    
-    var h3 = document.createElement("h3");
-    h3.textContent = "Legende :";
-    
-    var li1 = document.createElement("li");
-    var li2 = document.createElement("li");
-    
-    var img1 = document.createElement("img");
-    img1.src = "http://maps.google.com/mapfiles/ms/icons/red-dot.png";
-    
-    var text1 = document.createElement("p");
-    text1.textContent = "Votre Position : ";
-    
-    li1.appendChild(text1);
-    li1.appendChild(img1);
-    li1.id = "location";
-    
-    var img2 = document.createElement("img");
-    img2.src = "http://maps.google.com/mapfiles/ms/icons/green-dot.png";
-    
-    var text2 = document.createElement("p");
-    text2.textContent = "Bornes éléctriques : ";
-    
-    li2.appendChild(text2);
-    li2.appendChild(img2);
-    li2.id = "borne";
-    
-    ul.appendChild(li1);
-    ul.appendChild(li2);
-    
-    legend.appendChild(h3);
-    legend.appendChild(ul);
-
-    clearLegend();
-}
 
 function showLegend() {
-    var legend = document.getElementById("borne");
-    var location = document.getElementById("location");
-    legend.classList.remove("borne-hidden");
-    location.classList.remove("location-borne-hidden");
+    var borne = document.getElementById("borne");
+    borne.classList.remove("borne-hidden");
 }
 
 function clearLegend() {
-    var legend = document.getElementById("borne");
-    var location = document.getElementById("location");
-    legend.classList.add("borne-hidden");
-    location.classList.add("location-borne-hidden");
+    var borne = document.getElementById("borne");
+    borne.classList.add("borne-hidden");
 }

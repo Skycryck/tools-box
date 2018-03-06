@@ -14,7 +14,7 @@
                 <input id="search-btn" type="submit" value="Rechercher" />
             </form>
 
-            <div class="menu">
+            <nav class="menu">
                 <div class="menu-nv1">
                     <a href="./calculette.html">Calculette</a>
                     <a href="./convertisseur.html">Convertisseur</a>
@@ -22,25 +22,39 @@
                     <a href="#">Carte bornes</a>
                     <a href="./contact.html">Contact</a>
                 </div>
-            </div>
+            </nav>
         </header>
         <main>
             <article>
                 <h1>Carte bornes éléctriques</h1>
-                <hr width="100%" color="white">
-                <div id="question">
+                <hr width="100%" color="white">  
+                <form id="question">
                     <h3 id="text">Avez vous une voiture éléctrique ?</h3>
-                    <form>
+                    <div>
                         <label class="label-switch">non</label>
                         <label class="switch">
                             <input type="checkbox" id="toggle" onclick="toggleSwitch();" />
                             <span class="slider round"></span>
                         </label>
                         <label class="label-switch">oui</label>
-                    </form>
+                    </div>
+                </form>
+                <div id="map-legende">
+                    <div id="map"></div>
+                    <div id="legende">
+                        <h3>Legende :</h3>
+                        <ul>
+                            <li>
+                                <p>Votre Position :</p>
+                                <img src="http://maps.google.com/mapfiles/ms/icons/red-dot.png">
+                            </li>
+                            <li id="borne">
+                                <p>Bornes éléctriques :</p>
+                                <img src="http://maps.google.com/mapfiles/ms/icons/green-dot.png">
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-                <div id="map"></div>
-                <div id="legend"></div>
             </article>
         </main>
         <footer>
