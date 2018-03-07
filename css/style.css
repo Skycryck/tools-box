@@ -223,7 +223,7 @@ footer {
     display: flex;
 }
 
-.ImageZoom {
+.imageZoom {
 	width: 400px;
 	height: 267px;
 	overflow: hidden;
