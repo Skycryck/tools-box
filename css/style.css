@@ -149,7 +149,7 @@ footer {
     background-image: url('../images/logo-hover.png');
 }
 
-#searchthis #search {
+#div-recherche #search {
     width: 98.5%;
     height: 30px;
     padding: 5px 10px 5px 10px;
@@ -160,7 +160,7 @@ footer {
     color: gray;
 }
 
-#searchthis #search-btn {
+#div-recherche #search-btn {
     width: 98.5%;
     height: 30px;
     transition-duration: 1s; 
@@ -172,12 +172,19 @@ footer {
     font-size: 16px;
     margin: 10px 0 0 0;
     text-transform: uppercase;
+    text-align: center;
     color: white;
 }
 
-#searchthis #search-btn:hover {
+#div-recherche #search-btn:hover {
     color: #a53600;
     background-color: white;
+}
+
+#div-recherche {
+    display: flex;
+    flex-direction: column;
+    width: 275px;
 }
 
 /*-----------------------------------------------------------------*/
