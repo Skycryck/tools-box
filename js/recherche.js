@@ -87,10 +87,17 @@ function addList(liste) {
 
 //Efface les resultats de la recherche precedente
 function removeRes() {
+<<<<<<< HEAD
     var art = document.querySelector("article");
     if(art.hasChildNodes()) {
         while(art.firstChild) { //Retire le 1er enfant de res, tant que res contient un 1er enfant
             art.removeChild(art.firstChild);
+=======
+    var res = document.getElementById("res");
+    if(res.hasChildNodes()) {
+        while(res.firstChild) { //Retire le 1er enfant de res, tant que res contient un 1er enfant
+            res.removeChild(res.firstChild);
+>>>>>>> c2da3f39b5e3d8a889e3e233ce85e8dc7c0b1387
         }
     }
 }
