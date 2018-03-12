@@ -1,34 +1,28 @@
 
-var elements = [
+var liens = [
     {
         label: "ACCUEIL",
         lien: "../index.html",
-        rank: -1
     },
     {
         label: "CALCULETTE",
         lien: "./calculette.html",
-        rank: -1
     },
     {
         label: "CONVERTISSEUR",
         lien: "./convertisseur.html",
-        rank: -1
     },
     {
         label: "ASCII",
         lien: "./ascii.html",
-        rank: -1
     },
     {
         label: "CARTE",
         lien: "./js.html",
-        rank: -1
     },
     {
         label: "CONTACT",
         lien: "./contact.html",
-        rank: -1
     }
 ];
 
@@ -40,8 +34,22 @@ res.id = "res";
 function rechercher() {
     removeRes();
     var recherche = document.getElementById("search").value.toUpperCase();
-    //addList(rankList(elements, recherche));
-    setRankList(recherche);
+    addList(sortList(liens, recherche));
+}
+
+//Prend une liste en parametre et retourne cette meme liste ranger en fonction des indices "rank" de cette liste
+//Trie par selection
+function sortList(list, recherche) {
+    for(var i = 0; i < list.length; i++) {
+        for(var j = i + 1; j < list.length; j++) {
+            if(getScore(list[i].label , recherche) < getScore(list[j].label, recherche)) {
+                var temp = list[j];
+                list[j] = list[i];
+                list[i] = temp;
+            }
+        }
+    }
+    return list;
 }
 
 //Ajoute la liste des resultats de la recherche a la page
@@ -58,41 +66,6 @@ function addList(liste) {
     document.querySelector("article").appendChild(res);
 }
 
-//Prend en parametre une liste et une recherche et retourne la liste ranger en fonction de la recherche
-function setRankList(recherche) {
-    var found = []
-    for(var i = 0; i < elements.length; i++) {
-        if(recherche.includes(elements[i].label)) { //Si la recherche contient un mot egale a un des labels place l'element du label en 1er
-            elements[i].rank = 0;
-            found.push(i);
-        }
-    }
-    
-    for(var j = 0; j < elements.length; j++) {
-        if(!found.includes(j-1)) {
-            elements[j].rank = j;
-        }
-    }
-    
-    for(var k = 0; k < elements.length; k++) {
-        console.log(elements[k].label + " " + elements[k].rank);
-    }
-}
-
-//Retourne le nombre de caracteres en commun entre motA et motB
-function nbCharComun(motA, motB) {
-    var cpt = 0;
-    var dejaTester = "";
-    for(var i = 0; i < motA.length; i++) {
-        var charTester = motA.charAt(i);
-        if(motB.includes(charTester) && (!dejaTester.includes(charTester))) {
-            cpt++;
-            dejaTester = dejaTester + charTester;
-        }
-    }
-    return cpt;
-}
-
 //Efface les resultats de la recherche precedente
 function removeRes() {
     var res = document.getElementById("res");
@@ -103,3 +76,26 @@ function removeRes() {
     }
 }
 
+//Prend deux mot en parametre et retourne un score plus le score est eleve plus les mots sont similaires
+function getScore(mot, recherche) {
+    var score = 0;
+    if(mot == recherche)
+        score += 100;
+    for(var i = 0; i < 20; i++) {
+        switch (nbCharComun(mot, recherche)) {
+            case i: score += i;
+        }
+    }
+    return score;
+}
+
+//Retourne le nombre de caracteres en commun entre motA et motB
+function nbCharComun(motA, motB) {
+    var cpt = 0;
+    for(var i = 0; i < motA.length; i++) {
+        var charTester = motA[i];
+        if(motB.includes(charTester))
+            cpt++;
+    }
+    return cpt;
+}
