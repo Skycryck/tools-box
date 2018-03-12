@@ -11,14 +11,14 @@
             height: 128px;
             width: 128px;
         }
-        
+
         #hamb {
             height: 128px;
             width: 128px;
             background-image: url('../images/menu.png');
             margin: 0;
         }
-        
+
         #canvas, #hamb {
             border-width: 1px;
             border-style: solid;
@@ -64,77 +64,78 @@
         </footer>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script>
-            
+
             var canvas = document.querySelector("#canvas");
             var context = canvas.getContext('2d');
-            
+
             drawCanvas("rgb(165,54,0)");
-            
+
             function drawCanvas(color) {
                 //console.log(color);
                 context.fillStyle = color;
                 context.fillRect(40, 25, 220, 20);
                 context.fillRect(40, 65, 220, 20);
                 context.fillRect(40, 105, 220, 20);
-                
+
                 canvas.addEventListener("mouseover", hover, false);
                 canvas.addEventListener("mouseout", hoverOut, false);
             }
-            
+
             function hover(e) {
                 var couleur = "rgb(165,54,0)";
                 var r = 165;
                 var g = 54;
                 var b = 0;
-                
+
                 for(var f = 1; f <= 100; f++) {
                     couleur = colorToString(r,g,b);
-                    
+
                     r = round((255 - r) * (f/100) + r);
                     g = round((255 - g) * (f/100) + g);
                     b = round((255 - b) * (f/100) + b);
-                    
+
                     setTimeout(function(){ pause(); }, 1000);
                     drawCanvas(couleur);
                     if(r === 255 && g === 255 && b === 255) //Evite repetition (fin de fonction très long a cause des arrondies)
                         break;
                 }
             }
-            
+
             function hoverOut(e) {
                 var couleur = "rgb(255,255,255)";
                 var r = 255;
                 var g = 255;
                 var b = 255;
-                
+
                 for(var f = 1; f <= 100; f++) {
                     couleur = colorToString(r,g,b);
-                    
+
                     r = round((165 - r) * (f/100) + r);
                     g = round((54 - g) * (f/100) + g);
                     b = round((0 - b) * (f/100) + b);
-                    
+
                     setTimeout(function(){ pause(); }, 1000);
                     drawCanvas(couleur);
                     if(r === 165 && g === 54 && b === 0) //Evite repetition (fin de fonction très long a cause des arrondies)
                         break;
                 }
             }
-            
+
             function round(number) {
                 var factor = Math.pow(10, 0);
                 return Math.round(number * factor) / factor;
             }
-            
+
             function colorToString(r,g,b) {
                 return "rgb(" + r.toString() + "," + g.toString() + "," + b.toString() + ")";
             }
-            
+
             function pause() {
                 console.log(pause);
             }
-            
+
         </script>
         <script src="../js/scroll.js"></script>
+        <script src="../js/recherche.js"></script>
     </body>
 </html>
