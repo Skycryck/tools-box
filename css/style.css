@@ -122,6 +122,7 @@ footer {
   padding: 1rem;
   background-color: #141517;
   text-align: center;
+  z-index: 2;
 }
 
 /*-----------------------------------------------------------------*/
@@ -191,7 +192,7 @@ footer {
     transition-duration: 1s;
     -moz-transition-duration: 1s;
     width: 128px;
-    height: 128px;
+    height: 100%;
 }
 
 .menu:hover {
@@ -200,16 +201,16 @@ footer {
 }
 
 .menu-nv1 {
-    padding-top: 20px;
     position: absolute;
     transition-duration: 1s;
     -moz-transition-duration: 1s;
-    top: 130px;
+    top: 150px;
     right: -400px;
     width: 400px;
+    height: 100vh;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(23, 24, 26);
 }
 
 .menu-nv1 a {
@@ -219,7 +220,6 @@ footer {
     text-align: center;
     font-size: 40px;
     font-family: 'Anton', sans-serif;
-    background-color: #1d1f21;
     color: white;
 }
 
