@@ -3,39 +3,46 @@ var liens = [
     {
         label: "ACCUEIL",
         lien: "../index.html",
+        description: "Accueil du site."
     },
     {
         label: "CALCULETTE",
         lien: "./calculette.html",
+        description: "Calculatrice web qui permet d'ecrire ses calcul en expression informatique."
     },
     {
         label: "CONVERTISSEUR",
         lien: "./convertisseur.html",
+        description: "Convertisseur de base vers, decimal hexadecimal et binaire."
     },
     {
         label: "ASCII",
         lien: "./ascii.html",
+        description: "Table ascii complète"
     },
     {
         label: "CARTE",
         lien: "./js.html",
+        description: "Carte de la rochelle, elle peut donner la localisation de borne de recharge pour les voitures éléctriques."
     },
     {
         label: "CONTACT",
         lien: "./contact.html",
+        description: "Page de contact mail."
     },
 ];
 
+//Est appeller au chargement de la page
 window.onload = function() {
     var pos = document.location.href;
     var recherche;
     if(pos.includes("?")) {
         recherche = pos.substring(pos.lastIndexOf("?")+1, pos.length);
-        console.log(recherche);
         addList(sortList(liens, recherche));
     }
 }
 
+//Fonction appeller lors d'un clic sur le bouton rechercher
 function rechercher() {
     var recherche = document.getElementById("search").value.toUpperCase();
     var pos = document.location.href;
@@ -48,6 +55,7 @@ function rechercher() {
     }
 }
 
+//Redirige le client vers la page de recherche et enregistre la valeur de la recherche dans l'url
 function redirection(recherche) {
     var pos = document.location.href;
     if(pos.includes("index.html"))
@@ -74,12 +82,16 @@ function sortList(list, recherche) {
 //Ajoute la liste des resultats de la recherche a la page
 function addList(liste) {
     var res = document.createElement("ul");
+    res.id = "res";
     for(var i = 0; i < liste.length; i++) {
         var li = document.createElement("li");
         var a = document.createElement("a");
+        var p = document.createElement("p");
         a.textContent = liste[i].label;
         a.href = liste[i].lien;
+        p.textContent = liste[i].description;
         li.appendChild(a);
+        li.appendChild(p);
         res.appendChild(li);
     }
     document.querySelector("article").appendChild(res);
@@ -87,17 +99,10 @@ function addList(liste) {
 
 //Efface les resultats de la recherche precedente
 function removeRes() {
-<<<<<<< HEAD
     var art = document.querySelector("article");
     if(art.hasChildNodes()) {
         while(art.firstChild) { //Retire le 1er enfant de res, tant que res contient un 1er enfant
             art.removeChild(art.firstChild);
-=======
-    var res = document.getElementById("res");
-    if(res.hasChildNodes()) {
-        while(res.firstChild) { //Retire le 1er enfant de res, tant que res contient un 1er enfant
-            res.removeChild(res.firstChild);
->>>>>>> c2da3f39b5e3d8a889e3e233ce85e8dc7c0b1387
         }
     }
 }

@@ -61,12 +61,8 @@ h3 {
 a {
     text-decoration:none;
     color: orangered;
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
-}
-
-.menu-nv1 a {
-    color: white;
 }
 
 a:hover {
@@ -83,19 +79,19 @@ header {
     z-index: 2;
     position:fixed;
     top: 0px;
-    
+
     width: 100%;
     height: 150px;
-    
+
     background-color: rgba(255, 165, 0, 0.85);
     background-color: orangered;
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-main {    
+main {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -104,7 +100,7 @@ main {
 
 section {
     width: 900px;
-    
+
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
@@ -141,7 +137,7 @@ footer {
     background-image: url('../images/logo.png');
     background-position:center;
     background-repeat: no-repeat;
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
 }
 
@@ -163,12 +159,12 @@ footer {
 #div-recherche #search-btn {
     width: 98.5%;
     height: 30px;
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
     background-color: #a53600;
     padding: 5px 10px 5px 10px;
     border-style: none;
-   
+
     font-size: 16px;
     margin: 10px 0 0 0;
     text-transform: uppercase;
@@ -192,7 +188,7 @@ footer {
     background-image: url('../images/menu.png');
     background-position: center;
     background-repeat: no-repeat;
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
     width: 128px;
     height: 128px;
@@ -206,7 +202,7 @@ footer {
 .menu-nv1 {
     padding-top: 20px;
     position: absolute;
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
     top: 130px;
     right: -400px;
@@ -223,6 +219,12 @@ footer {
     text-align: center;
     font-size: 40px;
     font-family: 'Anton', sans-serif;
+    background-color: #1d1f21;
+    color: white;
+}
+
+.menu-nv1 a:hover {
+    background-color: orangered;
 }
 
 .menu:hover .menu-nv1 {
@@ -238,17 +240,17 @@ footer {
 }
 
 .image {
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
 	max-width: 100%;
     position: absolute;
 }
-			
+
 .image-hover {
 	-webkit-transform:scale(1.25);
 	-moz-transform:scale(1.25);
-	-ms-transform:scale(1.25); 
-	-o-transform:scale(1.25); 
+	-ms-transform:scale(1.25);
+	-o-transform:scale(1.25);
 	transform:scale(1.25);
 }
 
@@ -261,7 +263,7 @@ footer {
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
     -webkit-transform: translateY(100%);
     -ms-transform: translateY(100%);
@@ -280,7 +282,7 @@ footer {
 }
 
 .filtre-hidden {
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
     -webkit-transform: translateY(200%);
     -ms-transform: translateY(200%);
@@ -348,7 +350,7 @@ th h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
+
 }
 
 #contact img {
@@ -360,12 +362,12 @@ th h3 {
     margin-top: 20px;
     width: 250px;
     height: 30px;
-    transition-duration: 1s; 
+    transition-duration: 1s;
     -moz-transition-duration: 1s;
     background-color: #a53600;
     padding: 5px 10px 5px 10px;
     border-style: none;
-   
+
     font-size: 16px;
     margin: 10px 0 0 0;
     text-transform: uppercase;
@@ -550,36 +552,42 @@ input:checked + .slider:before {
     border-radius: 50%;
 }
 
+/*---RECHERCHE-----------------------------------------------------*/
+
+#res {
+    list-style: none;
+}
+
 /*---RESPONSIVE----------------------------------------------------*/
 
 /* Resolution 16/9 paysage */
 @media screen and (max-width: 1920px)
 {
-    
+
 }
 
 @media screen and (max-width: 1280px)
 {
-    
+
 }
 
 @media screen and (max-width: 853px)
 {
-    
+
 }
 
 /* Resolution 16/9 portrait */
 @media screen and (max-width: 1080px)
 {
-    
+
 }
 
 @media screen and (max-width: 720px)
 {
-    
+
 }
 
 @media screen and (max-width: 480px)
 {
-    
+
 }
