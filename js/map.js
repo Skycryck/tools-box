@@ -6,37 +6,41 @@ clearLegend();
 
 //Initialisation de la carte
 function initMap() {
-    var latitude;
-    var longitude;
-    
-    if (!navigator.geolocation) //Verifie si le navigateur est compatible avec la geolocalisation
-    {
-        navigator.geolocation.getCurrentPosition(function(position)
-        {
-            latitude = round(position.coords.latitude).toString();
-            longitude = round(position.coords.longitude).toString();
-            console.log("Latitude : " + latitude + ", longitude : " + longitude);
+    var def = {
+        lat: 46.1558,
+        lng: -1.1532
+    };
+
+    map = new google.maps.Map(document.getElementById("map"), {
+        zoom: 14,
+        center: def
+    });
+
+    //Si la geolocalisation html5 est dispo
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+            };
+
+            map.setCenter(pos);
+
+            var marker = new google.maps.Marker({
+                position: pos,
+                map: map
+            });
+        }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
         });
     }
-    else { //Si le navigateur n'est pas compatible avec la geolocalisation
-        latitude = 46.1558;
-        longitude = -1.1532;
-        alert("Votre navigateur ne prend pas en compte la géolocalisation HTML5");
+    //Sinon position par defaut
+    else {
+        var marker = new google.maps.Marker({
+            position: def,
+            map: map
+        });
     }
-    
-    var uluru = {
-        lat: latitude, 
-        lng: longitude
-    };
-    
-    map = new google.maps.Map(document.getElementById("map"), {
-        zoom: 15,
-        center: uluru
-    });
-    var marker = new google.maps.Marker({
-        position: uluru,
-        map: map
-    });
 
     var script = document.createElement('script');
     script.src = '../js/stations.json';
