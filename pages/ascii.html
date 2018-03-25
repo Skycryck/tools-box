@@ -5,13 +5,14 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="../css/style.css" />
         <link rel="shortcut icon" href="../images/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Table ASCII</title>
     </head>
     <body>
         <header>
             <a id="logo" href="../index.html"></a>
-            <div id="div-recherche">
-                <input id="search" name="q" type="text" placeholder="RECHERCHER UN OUTILS" />
+            <div class="recherche">
+                <input id="search" name="q" type="text" placeholder="RECHERCHE" />
                 <a href="#" id="search-btn" onclick="rechercher();">Rechercher</a>
             </div>
             <nav class="menu">
@@ -25,12 +26,13 @@
             </nav>
         </header>
         <main>
-            <article>
-                <h1>Table ASCII</h1>
+            <section>
+                <article id="ascii">
+                    <h1>Table ASCII</h1>
                 <hr width="100%" color="white">
                 <table class="tftable" border="1">
-                    <tr id="titre-table"><th><h3>Décimal</h3></th><th><h3>Octal</h3></th><th><h3>Hexadécimal</h3></th><th><h3>Binaire</h3></th><th><h3>Caractère</h3></th></tr>
-                    <tr><td>000</td><td>000</td><td>00</td><td>00000000</td><td>NUL (Null char.)</td></tr>
+                    <tr id="titre-table"><th id="colDec"><h3>Dec</h3></th><th id="colOct"><h3>Oct</h3></th><th id="colHexa"><h3>Hex</h3></th><th id="colBin"><h3>Bin</h3></th><th id="colChar"><h3>Char</h3></th></tr>
+                    <tr><td id="dec">000</td><td id="oct">000</td><td id="hexa">00</td><td id="bin">00000000</td><td id="char">NUL (Null char.)</td></tr>
                     <tr><td>001</td><td>001</td><td>01</td><td>00000001</td><td>SOH (Start of Header)</td></tr>
                     <tr><td>002</td><td>002</td><td>02</td><td>00000010</td><td>STX (Start of Text)</td></tr>
                     <tr><td>003</td><td>003</td><td>03</td><td>00000011</td><td>ETX (End of Text)</td></tr>
@@ -160,6 +162,7 @@
                     <tr><td>127</td><td>177</td><td>7F</td><td>01111111</td><td>DEL (delete)</td></tr>
                 </table>
             </article>
+            </section>
         </main>
         <footer>
             <p></p>

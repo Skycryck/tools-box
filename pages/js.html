@@ -4,13 +4,14 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="../css/style.css" />
         <link rel="shortcut icon" href="../images/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Map</title>
     </head>
     <body>
         <header>
             <a id="logo" href="../index.html"></a>
-            <div id="div-recherche">
-                <input id="search" name="q" type="text" placeholder="RECHERCHER UN OUTILS" />
+            <div class="recherche">
+                <input id="search" name="q" type="text" placeholder="RECHERCHE" />
                 <a href="#" id="search-btn" onclick="rechercher();">Rechercher</a>
             </div>
             <nav class="menu">
@@ -24,9 +25,10 @@
             </nav>
         </header>
         <main>
-            <article>
+            <section id="section-carte">
+                <article id="carte">
                 <h1>Carte bornes éléctriques</h1>
-                <hr width="100%" color="white">
+                <hr width="95%%" color="white">
                 <form id="question">
                     <h3 id="text">Avez vous une voiture éléctrique ?</h3>
                     <div>
@@ -55,6 +57,7 @@
                     </div>
                 </div>
             </article>
+            </section>
         </main>
         <footer>
             <p></p>

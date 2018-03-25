@@ -25,8 +25,18 @@ function style() {
     //Recupère une liste des cellules de la 1ere ligne
     var th = document.querySelectorAll("th");
     //Parcours cette liste de cellules pour definir leurs largeurs
-    document.getElementById("titre-table").style.width = "900px";
-    for(var i = 0; i < th.length; i++) {
-        th.item(i).style.width = largeur + "px";
-    }
+    var largeurTableau = document.querySelector(".tftable").offsetWidth;
+    document.getElementById("titre-table").style.width = largeurTableau + "px";
+
+    var largeurDec = document.getElementById("dec").offsetWidth;
+    var largeurOct = document.getElementById("oct").offsetWidth;
+    var largeurHexa = document.getElementById("hexa").offsetWidth;
+    var largeurBin = document.getElementById("bin").offsetWidth;
+    var largeurChar = document.getElementById("char").offsetWidth;
+
+    var d = document.getElementById("colDec").style.width = largeurDec + "px";
+    var o = document.getElementById("colOct").style.width = largeurOct + "px";
+    var h = document.getElementById("colHexa").style.width = largeurHexa + "px";
+    var b = document.getElementById("colBin").style.width = largeurBin + "px";
+    var c = document.getElementById("colChar").style.width = largeurChar + "px";
 }

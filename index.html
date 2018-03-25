@@ -4,13 +4,14 @@
         <meta charset="UTF-8" />
         <link rel="stylesheet" href="css/style.css" />
         <link rel="shortcut icon" href="images/logo.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ToolsBox</title>
     </head>
     <body>
         <header>
             <a id="logo" href="#haut"></a>
-            <div id="div-recherche">
-                <input id="search" name="q" type="text" placeholder="RECHERCHER UN OUTILS" />
+            <div class="recherche">
+                <input id="search" name="q" type="text" placeholder="RECHERCHE" />
                 <a href="#" id="search-btn" onclick="rechercher();">Rechercher</a>
             </div>
             <nav class="menu">
@@ -27,7 +28,7 @@
             <section>
                 <article id="artIndex1">
                     <h1>OUTILS</h1>
-                    <hr width="95%" color="white">
+                    <hr id="hr-outils" width="95%" color="white">
                     <div id="images">
                         <a class="lienImage" href="./pages/calculette.html" onmouseover="hoverFiltre(1)" onmouseout="outFiltre(1)" >
                             <img id="img1" class="image" src="images/calculette.png">
@@ -47,7 +48,10 @@
                 </article>
                 <article id="a-propos">
                     <h1>A PROPOS</h1>
-                    <hr width="100%" color="white">
+                    <hr id="hr-apropos" color="white">
+                    <div class="resp-container">
+                        <iframe class="resp-iframe" src="https://www.youtube.com/embed/GDrBIKOR01c" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    </div>
                     <p>Ce site internet est un site qui regroupe de nombreux outils nécessaires au programmeur. On y retrouve par exemple une calculatrice, un convertisseur de base, la table ASCII ou encore la liste des raccourcies de certains environnements de développement et plein d'autres outils. Ce site a était développer dans le cadre d'un projet HTML de licence informatique. <a href="mailto:jules.vanhulst@etudiant.univ-lr.fr">Contact.</a> </p>
                 </article>
             </section>
