@@ -124,14 +124,9 @@ footer {
 
 /* Header */
     /* Hamburger menu */
-.menu {
-    background: url('../images/menu.png') center no-repeat;
-    width: 128px;
-    height: 128px;
-}
-
-.menu:hover {
-    background: url('../images/menu-hover.png') center no-repeat;
+#hamburger {
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .menu-nv1 {
@@ -144,6 +139,12 @@ footer {
     display: flex;
     flex-direction: column;
     background-color: rgb(23, 24, 26);
+}
+
+.menu {
+    width: 128px;
+    height: 100%;
+    display: flex;
 }
 
 .menu:hover .menu-nv1 {
@@ -205,14 +206,7 @@ footer {
 
     /* Logo */
 #logo {
-    height: 128px;
-    width: 128px;
-    margin-left: 10px;
-    background: url('../images/logo.png') center no-repeat;
-}
-
-#logo:hover {
-    background: url('../images/logo-hover.png') center no-repeat;
+    margin-left: 20px;
 }
 
 /* Body index */
