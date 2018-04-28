@@ -35,6 +35,7 @@ var liens = [
 
 //Est appeller au chargement de la page
 function init () {
+    document.getElementById("search-btn").addEventListener("click", rechercher);
     var pos = document.location.href;
     var recherche;
     if(pos.includes("?")) {
