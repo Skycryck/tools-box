@@ -13,6 +13,12 @@
             width: 128px;
         }
 
+        #logo-canvas {
+            height: 128px;
+            width: 256px;
+            background-color: orangered;
+        }
+
         #hamb {
             height: 128px;
             width: 128px;
@@ -56,6 +62,7 @@
                     Message pour les navigateurs ne supportant pas encore canvas.
                 </canvas>
                 <div id="hamb"></div>
+                <canvas id="logo-canvas"></canvas>
             </article>
         </main>
         <footer>
@@ -69,10 +76,54 @@
             var canvas = document.querySelector("#canvas");
             var context = canvas.getContext('2d');
 
+            var logo = document.querySelector("#logo-canvas");
+            var contextLogo = logo.getContext('2d');
+
+            drawLogo("rgb(165,54,0)");
             drawCanvas("rgb(165,54,0)");
 
+            function drawLogo(color) {
+                //Efface le canvas avant de le redessiner
+                contextLogo.clearRect(0, 0, logo.width, logo.height);
+
+                contextLogo.fillStyle = color;
+                var txt1 = "PROGRAMMING";
+                var txt2 = "TOOLS-BOX";
+
+                contextLogo.font = "30pt Anton";
+                contextLogo.fillText(txt1, 35, 50);
+
+                contextLogo.font = "42pt Anton";
+                contextLogo.fillText(txt2, 35, 120);
+
+                context.beginPath();
+                // "<"
+                contextLogo.moveTo(30, 10);
+                contextLogo.lineTo(10, 65);
+                contextLogo.lineTo(30, 120);
+                // ">"
+                contextLogo.moveTo(265,10);
+                contextLogo.lineTo(280, 65);
+                contextLogo.lineTo(265, 120);
+
+                contextLogo.lineWidth = 7;
+                contextLogo.strokeStyle = color;
+                contextLogo.stroke();
+
+                logo.addEventListener("mouseover", hoverLogo, false);
+                logo.addEventListener("mouseout", hoverOutLogo, false);
+            }
+
+            function hoverLogo(e) {
+                drawLogo("white");
+            }
+
+            function hoverOutLogo(e) {
+                drawLogo("rgb(165,54,0)");
+            }
+
             function drawCanvas(color) {
-                //console.log(color);
+                context.clearRect(0, 0, canvas.width, canvas.height);
                 context.fillStyle = color;
                 context.fillRect(40, 25, 220, 20);
                 context.fillRect(40, 65, 220, 20);
@@ -95,7 +146,8 @@
                     g = round((255 - g) * (f/100) + g);
                     b = round((255 - b) * (f/100) + b);
 
-                    setTimeout(function(){ pause(); }, 1000);
+                    //Pause
+                    sleep(1);
                     drawCanvas(couleur);
                     if(r === 255 && g === 255 && b === 255) //Evite repetition (fin de fonction très long a cause des arrondies)
                         break;
@@ -115,7 +167,8 @@
                     g = round((54 - g) * (f/100) + g);
                     b = round((0 - b) * (f/100) + b);
 
-                    setTimeout(function(){ pause(); }, 1000);
+                    //Pause
+                    sleep(1);
                     drawCanvas(couleur);
                     if(r === 165 && g === 54 && b === 0) //Evite repetition (fin de fonction très long a cause des arrondies)
                         break;
@@ -131,10 +184,11 @@
                 return "rgb(" + r.toString() + "," + g.toString() + "," + b.toString() + ")";
             }
 
-            function pause() {
-                console.log(pause);
+            function sleep(miliseconds) {
+                var currentTime = new Date().getTime();
+                while (currentTime + miliseconds >= new Date().getTime()) {
+                }
             }
-
         </script>
         <script src="../js/scroll.js"></script>
         <script src="../js/recherche.js"></script>

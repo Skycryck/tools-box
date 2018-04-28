@@ -90,17 +90,13 @@ function showMarkers() {
     setMapOnAll(map);
 }
 
-function round(number) {
-  var factor = Math.pow(10, 4);
-  return Math.round(number * factor) / factor;
-}
-
-
+//Affiche la legende suplementaire
 function showLegend() {
     var borne = document.getElementById("borne");
     borne.classList.remove("borne-hidden");
 }
 
+//Cache la legende
 function clearLegend() {
     var borne = document.getElementById("borne");
     borne.classList.add("borne-hidden");

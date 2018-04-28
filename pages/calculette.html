@@ -26,9 +26,33 @@
         </header>
         <main>
             <section>
-                <article>
+                <article id="calculatrice">
                     <h1>Calculette</h1>
                     <hr width="95%" color="white">
+                    <form class="calculatrice" action="index.html" method="post">
+                        <input id="field" type="text" name="">
+                        <div class="operateurs">
+                            <button class="op" type="button" name="+">+</button>
+                            <button class="op" type="button" name="-">-</button>
+                            <button class="op" type="button" name="*">X</button>
+                            <button class="op" type="button" name="/">/</button>
+                            <button id="virgule" type="button" name=".">,</button>
+                        </div>
+                        <div class="actions">
+                            <button type="button" name="7" class="chiffres">7</button>
+                            <button type="button" name="8" class="chiffres">8</button>
+                            <button type="button" name="9" class="chiffres">9</button>
+                            <button type="button" name="4" class="chiffres">4</button>
+                            <button type="button" name="5" class="chiffres">5</button>
+                            <button type="button" name="6" class="chiffres">6</button>
+                            <button type="button" name="1" class="chiffres">1</button>
+                            <button type="button" name="2" class="chiffres">2</button>
+                            <button type="button" name="3" class="chiffres">3</button>
+                            <button type="button" name="0" class="chiffres">0</button>
+                            <button type="button" name="button" id="reset">C</button>
+                            <button type="button" name="button" id="equal">=</button>
+                        </div>
+                    </form>
                 </article>
             </section>
         </main>
@@ -37,9 +61,9 @@
             <p>© programing-toolbox.com</p>
             <a href="#haut">haut de page</a>
         </footer>
-        <script src="../js/convertisseur.js"></script>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
         <script src="../js/scroll.js"></script>
         <script src="../js/recherche.js"></script>
+        <script src="../js/calculatrice.js"></script>
     </body>
 </html>

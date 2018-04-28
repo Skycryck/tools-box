@@ -1,3 +1,4 @@
+document.addEventListener('DOMContentLoaded', init, false);
 
 var liens = [
     {
@@ -33,7 +34,7 @@ var liens = [
 ];
 
 //Est appeller au chargement de la page
-window.onload = function() {
+function init () {
     var pos = document.location.href;
     var recherche;
     if(pos.includes("?")) {
