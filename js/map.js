@@ -47,6 +47,7 @@ function initMap() {
     document.getElementsByTagName('head')[0].appendChild(script);
 }
 
+//Remplit l'arraylist markers de tout les markers presents dans le fichier .json
 window.stations = function(results) {
     for (var i = 0; i < results.features.length; i++) {
         var coords = results.features[i].geometry.coordinates;

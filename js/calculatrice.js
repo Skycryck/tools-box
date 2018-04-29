@@ -1,5 +1,6 @@
 document.addEventListener('DOMContentLoaded', init, false);
 
+//Affichage de la calculatrice
 var field = document.getElementById("field");
 
 var a  = 0;
@@ -30,6 +31,7 @@ function init() {
     }
 }
 
+//Reset la calculatrice
 function resetField(e) {
     setField("0");
     op = "";
@@ -41,14 +43,17 @@ function resetField(e) {
     turn = true;
 }
 
+//Retourne la valeur de l'affichage de la calculatrice
 function getField() {
     return field.value;
 }
 
+//Definie l'affichage de la calculatrice
 function setField(val) {
     field.value = val;
 }
 
+//Definie l'operation qui vas etre effctuer par la calculatrice
 function setOp(e) {
     op = this.name;
     addToField(" " + op + " ");
@@ -56,10 +61,12 @@ function setOp(e) {
     decimal = false;
 }
 
+//Ajoutee la valeur du parametre a l'affichage de la calculatrice
 function addToField(val) {
     field.value += val;
 }
 
+//Est appeller a chaque click sur un chiffre, definie les nombres et leurs affichages
 function number(e) {
     let chiffre = this.name;
     if(turn) {
@@ -96,6 +103,7 @@ function number(e) {
     }
 }
 
+//Est appeller au click sur egale, fait le calcul final et l'affiche
 function calculate(e) {
     let res = 0;
     let na = Number(a + "." + da);
@@ -128,11 +136,13 @@ function calculate(e) {
     decimal = false;
 }
 
+//Ajoute la virgule a l'affichage
 function virgule(e) {
     addToField(",");
     decimal = true;
 }
 
+//Retourne nb arrondit avec p decimal
 function arrondir(nb, p) {
     let f = Math.pow(10, p);
     return Math.round(nb * f) / f;

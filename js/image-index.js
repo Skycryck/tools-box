@@ -4,7 +4,8 @@ var filtre2 = document.getElementById("filtre2");
 var img1 = document.getElementById("img1");
 var img2 = document.getElementById("img2");
 
-function hoverFiltre(i) { 
+//Quand la souri est sur l'image
+function hoverFiltre(i) {
     switch(i) { //i est le numero de l'image qui est en train d'etre survolee
         case 1: //Image n°1
             filtre1.classList.remove("filtre-hidden"); //Fait apparaitre la div qui sert de legend a l'image
@@ -17,6 +18,7 @@ function hoverFiltre(i) {
     }
 }
 
+//Quand la souris n'est pas sur l'image
 function outFiltre(i) {
     switch(i) { //i est le numero de l'image qui est en train d'etre survolee
     case 1: //Image n°1

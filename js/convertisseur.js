@@ -1,69 +1,65 @@
 (function () {
+    'use strict';
+    var SgConverter = function () {
+        var that = this;
 
-  'use strict';
+        this.converters = ['decimal', 'hexadecimal', 'binary'];
+        this.inputElements = {};
 
-  var SgConverter = function () {
-    var that = this;
+        this.decimalToHexadecimal = function (decimalValue) {
+            return dToH(decimalValue);
+        };
 
-    this.converters = ['decimal', 'hexadecimal', 'binary'];
-    this.inputElements = {};
+        this.decimalToBinary = function (decimalValue) {
+            return dToB(decimalValue);
+        };
 
-    this.decimalToHexadecimal = function (decimalValue) {
-        return dToH(decimalValue);
-    };
+        this.hexadecimalToDecimal = function (hexadecimalValue) {
+            return hToD(hexadecimalValue);
+        };
 
-    this.decimalToBinary = function (decimalValue) {
-        return dToB(decimalValue);
-    };
+        this.hexadecimalToBinary = function (hexadecimalValue) {
+            return hToB(hexadecimalValue);
+        };
 
-    this.hexadecimalToDecimal = function (hexadecimalValue) {
-        return hToD(hexadecimalValue);
-    };
+        this.binaryToDecimal = function (binaryValue) {
+            return bToD(binaryValue);
+        };
 
-    this.hexadecimalToBinary = function (hexadecimalValue) {
-        return hToB(hexadecimalValue);
-    };
+        this.binaryToHexadecimal = function (binaryValue) {
+            return bToH(binaryValue);
+        };
 
-    this.binaryToDecimal = function (binaryValue) {
-        return bToD(binaryValue);
-    };
+        this.convert = function (sourceType) {
+            var sourceValue = this.inputElements[sourceType].value;
+            this.converters.forEach(function (converter) {
+                if (converter !== sourceType) {
+                    var ucConverter = converter.charAt(0).toUpperCase() + converter.slice(1);
+                    var converterMethod = sourceType + 'To' + ucConverter;
+                    that.inputElements[converter].value = that[converterMethod](sourceValue);
+                }
+            });
+        }; // convert
 
-    this.binaryToHexadecimal = function (binaryValue) {
-        return bToH(binaryValue);
-    };
+        this.update = function (event) {
+            that.convert(event.target.id);
+        };
+    }; // onEnterKey
 
-    this.convert = function (sourceType) {
-      var sourceValue = this.inputElements[sourceType].value;
-      this.converters.forEach(function (converter) {
-        if (converter !== sourceType) {
-          var ucConverter = converter.charAt(0).toUpperCase() + converter.slice(1);
-          var converterMethod = sourceType + 'To' + ucConverter;
-          that.inputElements[converter].value = that[converterMethod](sourceValue);
-        }
-      });
-    }; // convert
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('decimal').focus();
+        var sgConverter = new SgConverter();
+        sgConverter.converters.forEach(function (converter) {
+            sgConverter.inputElements[converter] = document.getElementById(converter);
+            document.getElementById(converter).nextElementSibling.addEventListener('click', function () {
+                sgConverter.convert(converter);
+            }, false );
 
-    this.update = function (event) {
-      that.convert(event.target.id);
-    };
-  }; // onEnterKey
-
-  document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('decimal').focus();
-    var sgConverter = new SgConverter();
-    sgConverter.converters.forEach(function (converter) {
-      sgConverter.inputElements[converter] = document.getElementById(converter);
-      document.getElementById(converter).nextElementSibling.addEventListener('click', function () {
-        sgConverter.convert(converter);
-      }, false );
-
-      ['keyup', 'change'].forEach(function (event) {
-        document.getElementById(converter).addEventListener(event, sgConverter.update, false);
-      });
-
-    });
-  }); // DOMContentLoaded
-
+            ['keyup', 'change'].forEach(function (event) {
+                document.getElementById(converter).addEventListener(event, sgConverter.update, false);
+            });
+        });
+    }); // DOMContentLoaded
 }()); // IIFE
 
 //Prend un nombre decimal en paramétre et renvoie un nombre binaire
@@ -93,21 +89,21 @@ function bToD(b) {
 //Prend un nombre binaire en paramétre et renvoie un nombre hexadecimal
 function bToH(b) {
     var h = "";
-    
+
     b = reverse(b);
     while(b.length % 4 != 0) {
         b = b + "0";
     }
     b = reverse(b);
-    
+
     var bit = [];
     for(var i = 0; i < b.length; i = i + 4) {
         bit.push(b.substr(i,4));
     }
-    
+
     for(var j = 0; j < bit.length; j++) {
         switch(bit[j]) {
-            case "0000" : 
+            case "0000" :
                 h = h + "0";
                 break;
             case "0001" :
@@ -131,7 +127,7 @@ function bToH(b) {
             case "0111" :
                 h = h + "7";
                 break;
-            case "1000" : 
+            case "1000" :
                 h = h + "8";
                 break;
             case "1001" :
@@ -163,10 +159,10 @@ function bToH(b) {
 //Prend un nombre hexadecimal en paramétre et renvoie un nombre binaire
 function hToB(h) {
     var b = "";
-    
+
     for(var i = 0; i < h.length; i++) {
         switch(h[i]) {
-            case "0": 
+            case "0":
                 b = b + "0000";
                 break;
             case "1":
@@ -190,7 +186,7 @@ function hToB(h) {
             case "7":
                 b = b + "0111";
                 break;
-            case "8": 
+            case "8":
                 b = b + "1000";
                 break;
             case "9":
@@ -216,7 +212,7 @@ function hToB(h) {
                 break;
         }
     }
-    
+
     return b;
 }
 
